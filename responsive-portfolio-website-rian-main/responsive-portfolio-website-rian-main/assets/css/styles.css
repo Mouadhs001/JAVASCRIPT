@@ -211,11 +211,12 @@ img {
 
 .nav__toggle {
   font-size: 1.25rem;
+  cursor: pointer;
   border-radius: 50%;
 }
 /* Navigation for mobile devices */
 @media screen and (max-width: 1150px) {
-  .nev__menu {
+  .nav__menu {
     position: fixed;
     top: -100%;
     left: 0;
