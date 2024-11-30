@@ -772,6 +772,7 @@ img {
   outline: none;
   border: none;
 }
+
 .contact__input {
   position: absolute;
   width: 100%;
@@ -878,9 +879,44 @@ img {
 .contact__social-link:hover {
   background-color: var(--first-color);
 }
-
+.contact__message {
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0;
+}
 /*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--black-color);
+}
+.footer__container {
+  padding-block: 3rem 2rem;
+  row-gap: 2.5rem;
+}
+.footer__links {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
 
+.footer__link {
+  color: var(--white-color);
+  transition: color 0.4s;
+}
+.footer__link:hover {
+  color: var(--text-color-light);
+}
+
+.footer__copy {
+  color: var(--text-color-light);
+  font-size: var(--font-medium);
+  text-align: center;
+}
+.footer__copy a {
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/

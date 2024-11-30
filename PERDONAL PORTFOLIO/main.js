@@ -33,6 +33,36 @@ const scrollHeader = () => {
 };
 window.addEventListener("scroll", scrollHeader);
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById("contact-form");
+const contactMessage = document.getElementById("contact-message");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+  // serviceID - templateID - #form - publicKey
+  emailjs
+    .sendForm(
+      "service_py89q7t",
+      "template_3m86s3t",
+      "#contact__form",
+      "oYCGx32L-BDM8C02Z"
+    )
+    .then(
+      () => {
+        //show sent message
+        contactMessage.textContent = "Message sent successfully ✅";
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 5000);
+        //clear input field
+        contactForm.reset();
+      },
+      () => {
+        // Show error message
+        contactMessage.textContent = "Message not sent (service error) ❌";
+      }
+    );
+};
+contactForm.addEventListener("submit", sendEmail);
 
 /*=============== SHOW SCROLL UP ===============*/
 
