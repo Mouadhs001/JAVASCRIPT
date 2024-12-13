@@ -7,7 +7,7 @@
     <!--=============== FAVICON ===============-->
     <link
       rel="shortcut icon"
-      href="assets/img/favicon.png"
+      href="assets/img/FavIconOfc.png"
       type="image/x-icon"
     />
 
@@ -21,7 +21,7 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="styles.css" />
 
-    <title>Responsive portfolio website Mouad - Bedimcode</title>
+    <title>Mouad Hammou Sghir</title>
   </head>
   <body>
     <!--==================== HEADER ====================-->
@@ -39,7 +39,7 @@
 
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="#home" class="nav__link active-link">Home</a>
             </li>
 
             <li class="nav__item">
@@ -51,7 +51,9 @@
             </li>
 
             <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact Me</a>
+              <a href="#contact" class="nav__link nav__link-button"
+                >Contact Me</a
+              >
             </li>
           </ul>
 
@@ -63,6 +65,8 @@
         </div>
 
         <div class="nav__buttons">
+          <!-- theme button  -->
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
           <!-- toggle button  -->
           <div class="nav__toggle" id="nav-toggle">
             <i class="ri-menu-4-line"></i>
@@ -80,11 +84,7 @@
 
           <div class="home__perfil">
             <div class="home__image">
-              <img
-                src="assets/img/home-perfil.jpg"
-                alt="image"
-                class="home__img"
-              />
+              <img src="assets/img/PFCimg.png" alt="image" class="home__img" />
               <div class="home__shadow"></div>
 
               <img
@@ -151,7 +151,7 @@
           <div class="about__perfil">
             <div class="about__image">
               <img
-                src="assets/img/about-perfil.jpg"
+                src="assets/img/testetst.png"
                 alt="image"
                 class="about__img"
               />
@@ -524,8 +524,12 @@
         </span>
       </div>
     </footer>
+    <!-- mailtrap -->
 
     <!--========== SCROLL UP ==========-->
+    <a href="#home" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+    </a>
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
