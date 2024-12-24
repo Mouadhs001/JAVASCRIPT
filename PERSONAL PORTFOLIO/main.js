@@ -1,3 +1,22 @@
+// function sendMail() {
+//   let parms = {
+//     name: getElementById("name").value,
+//     name: getElementById("email").value,
+//     name: getElementById("subject").value,
+//     name: getElementById("message").value,
+//   };
+//   emailjs
+//     .send("service_py89q7t", "template_3m86s3t", parms)
+//     .then(alert("Email sent!!"));
+// }
+
+// const contactForm = document.getElementById("contact-form");
+// const contactMessage = document.getElementById("contact-message");
+
+/*=============== SHOW MENU ===============*/
+
+// function sendEmail() {}
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
@@ -32,6 +51,38 @@ const scrollHeader = () => {
     : header.classList.remove("shadow-header");
 };
 window.addEventListener("scroll", scrollHeader);
+
+/*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
+  const scrollUp = document.getElementById("scroll-up");
+  this.scrollY >= 350
+    ? scrollUp.classList.add("show-scroll")
+    : scrollUp.classList.remove("show-scroll");
+};
+window.addEventListener("scroll", scrollUp);
+
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll("section[id]");
+
+const scrollActive = () => {
+  const scrollDown = window.scrollY;
+
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute("id"),
+      sectionsClass = document.querySelector(
+        ".nav__menu a[href*=" + sectionId + "]"
+      );
+    if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+      sectionsClass.classList.add("active-link");
+    } else {
+      sectionsClass.classList.remove("active-link");
+    }
+  });
+};
+window.addEventListener("scroll", scrollActive);
+
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById("contact-form");
 const contactMessage = document.getElementById("contact-message");
@@ -43,7 +94,7 @@ const sendEmail = (e) => {
     .sendForm(
       "service_py89q7t",
       "template_3m86s3t",
-      "#contact__form",
+      "#contact-form",
       "oYCGx32L-BDM8C02Z"
     )
     .then(
@@ -63,37 +114,6 @@ const sendEmail = (e) => {
     );
 };
 contactForm.addEventListener("submit", sendEmail);
-
-/*=============== SHOW SCROLL UP ===============*/
-const scrollUp = () => {
-  const scrollUp = document.getElementById("scroll-up");
-  this.scrollY >= 350
-    ? scrollUp.classList.add("show-scroll")
-    : scrollUp.classList.remove("show-scroll");
-};
-window.addEventListener("scroll", scrollUp);
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll("section[id]");
-
-const scrollActive = () => {
-  const scrollDown = wondow.screenY;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
-      sectionId = current.getAttribute("id"),
-      sectionsClass = document.querySelector(
-        ".nav__menu a[href*=" + sectionId + "]"
-      );
-    if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
-      sectionsClass.classList.add("active-link");
-    } else {
-      sectionsClass.classList.remove("active-link");
-    }
-  });
-};
-window.addEventListener("scroll", scrollActive);
 
 /*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById("theme-button");
@@ -132,3 +152,21 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+  // reset: true // animation repeat  (Uncomment if needed)
+});
+
+sr.reveal(".home__perfil", { origin: "right" });
+sr.reveal(".home__name, .home__info", { origin: "left" });
+// Add more reveals for other elements/sections as needed:
+sr.reveal(
+  ".about__image, .about__info, .services__card, .projects__card, .contact__data, .contact__mail, .contact__social",
+  {
+    interval: 100, // Delay between each element's animation
+    // ... other common options you want to apply to all
+  }
+);
