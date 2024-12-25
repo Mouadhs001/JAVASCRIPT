@@ -1,22 +1,3 @@
-// function sendMail() {
-//   let parms = {
-//     name: getElementById("name").value,
-//     name: getElementById("email").value,
-//     name: getElementById("subject").value,
-//     name: getElementById("message").value,
-//   };
-//   emailjs
-//     .send("service_py89q7t", "template_3m86s3t", parms)
-//     .then(alert("Email sent!!"));
-// }
-
-// const contactForm = document.getElementById("contact-form");
-// const contactMessage = document.getElementById("contact-message");
-
-/*=============== SHOW MENU ===============*/
-
-// function sendEmail() {}
-
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
@@ -157,7 +138,6 @@ const sr = ScrollReveal({
   distance: "60px",
   duration: 2500,
   delay: 400,
-  // reset: true // animation repeat  (Uncomment if needed)
 });
 
 sr.reveal(".home__perfil", { origin: "right" });
@@ -167,6 +147,5 @@ sr.reveal(
   ".about__image, .about__info, .services__card, .projects__card, .contact__data, .contact__mail, .contact__social",
   {
     interval: 100, // Delay between each element's animation
-    // ... other common options you want to apply to all
   }
 );
