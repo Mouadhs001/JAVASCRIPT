@@ -122,6 +122,14 @@ body.dark-theme {
 .dark-theme .shadow-header {
   box-shadow: 0 1px 12px hsla(0, 0%, 0%, 0.6);
 }
+
+.dark-theme .projects__title {
+  color: var(--black-color);
+}
+.dark-theme .projects__link i {
+  color: var(--black-color-light);
+}
+
 .dark-theme .section__title-1::after,
 .dark-theme .section__title-2::after {
   background-color: hsla(14, 70%, 50%, 0.2);
@@ -903,7 +911,7 @@ body.dark-theme {
   margin-bottom: 0.5rem;
 }
 .contact__social-description-2 {
-  color: var(--white-color);
+  color: var(--black-color-light);
   font-size: var(--small-font-size);
   font-weight: var(--font-semi-bold);
 }
