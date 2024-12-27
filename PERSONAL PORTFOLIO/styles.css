@@ -729,6 +729,9 @@ body.dark-theme {
   color: var(--title-color);
   font-size: var(--small-font-size);
 }
+.dark-theme .projects__description {
+  color: var(--text-color-light);
+}
 .projects__buttons {
   display: flex;
   align-items: center;
