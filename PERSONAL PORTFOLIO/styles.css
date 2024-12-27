@@ -690,7 +690,7 @@ body.dark-theme {
 
 .projects__image {
   position: relative;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 .projects__button {
   position: absolute;
@@ -724,6 +724,10 @@ body.dark-theme {
 .projects__title {
   font-size: var(--h3-font-size);
   margin-bottom: 0.75rem;
+}
+.projects__description {
+  color: var(--title-color);
+  font-size: var(--small-font-size);
 }
 .projects__buttons {
   display: flex;
@@ -1283,7 +1287,7 @@ body.dark-theme {
     padding-left: 3rem;
   }
   .about__description {
-    font-size: var(--h2-font-size);
+    font-size: 1rem;
     margin-bottom: 2rem;
   }
   .about__description::after {
@@ -1295,6 +1299,9 @@ body.dark-theme {
   .about__list {
     margin-bottom: 5rem;
   }
+  /* .about__itrm {
+    font-size: 0.85rem;
+  } */
   .about__buttons {
     justify-content: initial;
   }
@@ -1329,8 +1336,8 @@ body.dark-theme {
     transform: translate(1.25rem, 1.25rem);
   }
   .project__container {
-    grid-template-columns: repeat(3, 352px);
-    padding-block: 3rem 1rem;
+    grid-template-columns: repeat(2, 452px);
+    padding-block: 1rem 1rem;
   }
   .projects__card {
     padding: 1.25rem 1.25rem 1.25rem;
