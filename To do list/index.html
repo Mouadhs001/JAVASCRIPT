@@ -3,18 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-do List</title>
+    <title>To-do List with Categories</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <div class="todo-app">
-        <h2>To-Do List <img src="images/a-book.png" /></h2>
+        <h1>
+          To-Do List with Categories
+          <img src="images/a-book.png" alt="To-do icon" />
+        </h1>
         <div class="row">
-          <input type="text" id="input-box" placeholder="Add a task..." />
-          <button onclick="addTask()">Add</button>
+          <input
+            type="text"
+            id="input-box"
+            placeholder="Add a task..."
+            aria-label="Task input"
+          />
+          <select id="category-select">
+            <option value="General">General</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+          <button id="add-button" aria-label="Add task">Add</button>
         </div>
-        <ul id="list-container"></ul>
+        <div class="filter-section">
+          <label for="filter-select">Filter by category:</label>
+          <select id="filter-select">
+            <option value="All">All</option>
+            <option value="General">General</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+        </div>
+        <ul id="list-container" role="list" aria-label="To-do tasks"></ul>
       </div>
     </div>
     <script src="script.js"></script>
