@@ -1,35 +1,83 @@
-const display = document.querySelector(".display");
-const buttons = document.querySelectorAll(".buttons button"); // Select all buttons inside the .buttons div
+document.addEventListener("DOMContentLoaded", () => {
+  const display = document.querySelector(".display");
+  let currentInput = "";
+  let previousInput = "";
+  let operator = "";
 
-buttons.forEach((item) => {
-  item.onclick = () => {
-    if (item.id === "clear") {
-      display.innerText = "";
-    } else if (item.id === "backspace") {
-      let string = display.innerText.toString();
-      display.innerText = string.substring(0, string.length - 1);
-    } else if (item.id === "=") {
-      try {
-        display.innerText = eval(display.innerText);
-      } catch (error) {
-        display.innerText = "Error";
-        setTimeout(() => {
-          display.innerText = "";
-        }, 2000);
+  document.querySelector(".buttons").addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.tagName === "BUTTON") {
+      const action = target.classList.contains("btn-number")
+        ? "number"
+        : target.classList.contains("btn-operation")
+        ? "operation"
+        : target.classList.contains("btn-equal")
+        ? "equal"
+        : "";
+
+      if (action) {
+        handleInput(target.id, action);
       }
-    } else {
-      display.innerText += item.innerText;
     }
-  };
+  });
+
+  function handleInput(value, action) {
+    switch (action) {
+      case "number":
+        currentInput += value;
+        updateDisplay(currentInput);
+        break;
+      case "operation":
+        if (value === "clear") {
+          clearAll();
+        } else if (value === "backspace") {
+          currentInput = currentInput.slice(0, -1);
+          updateDisplay(currentInput);
+        } else {
+          if (currentInput) {
+            previousInput = currentInput;
+            currentInput = "";
+            operator = value;
+          }
+        }
+        break;
+      case "equal":
+        if (currentInput && previousInput && operator) {
+          const result = calculate(previousInput, currentInput, operator);
+          updateDisplay(result);
+          currentInput = result;
+          previousInput = "";
+          operator = "";
+        }
+        break;
+    }
+  }
+
+  function updateDisplay(value) {
+    display.textContent = value;
+  }
+
+  function clearAll() {
+    currentInput = "";
+    previousInput = "";
+    operator = "";
+    updateDisplay("0");
+  }
+
+  function calculate(a, b, operator) {
+    const num1 = parseFloat(a);
+    const num2 = parseFloat(b);
+    switch (operator) {
+      case "+":
+        return num1 + num2;
+      case "-":
+        return num1 - num2;
+      case "*":
+        return num1 * num2;
+      case "/":
+        return num1 / num2;
+      default:
+        return 0;
+    }
+  }
 });
-
-const themeToggleBtn = document.querySelector(".theme-toggle");
-const calculator = document.querySelector(".calculator");
-const toggleIcon = document.querySelector(".theme-toggle");
-
-let isDark = true;
-themeToggleBtn.onclick = () => {
-  calculator.classList.toggle("dark");
-  themeToggleBtn.classList.toggle("active");
-  isDark = !isDark;
-};
