@@ -1339,7 +1339,7 @@ body.dark-theme {
     transform: translate(1.25rem, 1.25rem);
   }
   .project__container {
-    grid-template-columns: repeat(2, 452px);
+    grid-template-columns: repeat(3, 382px);
     padding-block: 1rem 1rem;
   }
   .projects__card {
