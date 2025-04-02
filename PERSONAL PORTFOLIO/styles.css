@@ -608,11 +608,11 @@ body.dark-theme {
   left: -1.75rem;
   top: 0.5rem;
 }
-.about__list {
+/* .about__list {
   list-style: square;
   color: var(--title-color);
   margin-bottom: 3rem;
-}
+} */
 .about__buttons {
   display: flex;
   justify-content: center;
@@ -1019,6 +1019,168 @@ body.dark-theme {
   bottom: 3rem;
 }
 
+
+/* test animation */
+/* ===== SKILLS CAROUSEL ===== */
+.skills-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.skills-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  padding: 1rem 0;
+  margin-bottom: 5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 80px;
+  transition: all 0.3s ease;
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  color: var(--first-color);
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.skill-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+  opacity: 0.9;
+}
+
+
+/* Brand-specific colors */
+.fa-html5 { color: #E34F26; }
+.fa-css3-alt { color: #1572B6; }
+.fa-js { color: #F7DF1E; }
+.fa-react { color: #61DAFB; }
+.fa-php { color: #777BB4; }
+.fa-database { color: #2D3748; }
+.fa-github { color: #181717; }
+
+/* Hover effects */
+.skill-item:hover .skill-icon {
+  transform: translateY(-5px) scale(1.1);
+}
+.skill-item:hover .skill-name {
+  opacity: 1;
+  font-weight: 600;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.skills-carousel:hover .skills-track {
+  animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-track {
+    gap: 1.5rem;
+    animation-duration: 25s;
+  }
+  .skill-icon {
+    font-size: 2rem;
+    width: 32px;
+    height: 32px;
+  }
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .skills-track {
+    gap: 1rem;
+    animation-duration: 20s;
+  }
+  .skill-item {
+    min-width: 70px;
+  }
+  .skill-icon {
+    font-size: 2rem;
+    width: 32px;
+    height: 32px;
+  }
+  .skill-name {
+    font-size: 0.7rem;
+  }
+}
+
+/* For medium devices (576px) */
+@media screen and (min-width: 576px) {
+  .skills-track {
+    gap: 1.5rem;
+  }
+  .skill-icon {
+    font-size: 2.2rem;
+  }
+  .skill-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* For medium devices (768px) */
+@media screen and (min-width: 768px) {
+  .skills-track {
+    gap: 2rem;
+  }
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* For large devices (1150px) */
+@media screen and (min-width: 1150px) {
+  .skills-carousel {
+    margin: 4rem 0;
+  }
+  .skills-track {
+    gap: 2.5rem;
+    padding: 1.5rem 0;
+  }
+  .skill-icon {
+    font-size: 3rem;
+    width: 48px;
+    height: 48px;
+  }
+  .skill-name {
+    font-size: 1rem;
+  }
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {
@@ -1299,9 +1461,9 @@ body.dark-theme {
     left: -3rem;
     top: 14px;
   }
-  .about__list {
+  /* .about__list {
     margin-bottom: 5rem;
-  }
+  } */
   /* .about__itrm {
     font-size: 0.85rem;
   } */
